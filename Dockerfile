@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11-slim-bullseye
 
 # Install wkhtmltopdf system dependency (use buster package for compatibility)
 RUN apt-get update && \
