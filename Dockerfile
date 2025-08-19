@@ -1,4 +1,4 @@
-# Use the official Python image from the Docker Hub
+
 FROM python:3.11-slim
 
 # Set environment variables
@@ -18,5 +18,5 @@ COPY . /app/
 # Expose the port FastAPI will run on
 EXPOSE 8000
 
-# Run the FastAPI app with uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the FastAPI app using the built-in server (for development only)
+CMD ["python", "app/main.py"]
