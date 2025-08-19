@@ -1,9 +1,6 @@
-
 FROM python:3.11-slim
 
 # Install wkhtmltopdf system dependency (use buster package for compatibility)
-RUN apt-get update && \
-# Install wkhtmltopdf using apt for Debian
 RUN apt-get update && \
     apt-get install -y wkhtmltopdf && \
     rm -rf /var/lib/apt/lists/*
