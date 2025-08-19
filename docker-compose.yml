@@ -7,3 +7,8 @@ services:
     volumes:
       - .:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fastapi.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.fastapi.entrypoints=web"
+      - "traefik.http.services.fastapi.loadbalancer.server.port=8000"
